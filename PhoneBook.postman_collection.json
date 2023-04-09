@@ -1,0 +1,672 @@
+{
+	"info": {
+		"_postman_id": "5a4084e6-9c06-4130-b26e-f03c76a15b61",
+		"name": "PhoneBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24516621"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sam",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ravshanovsamir@gmail.com",
+									"description": "char",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"description": "string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|KHR1Z4iikh72ULuFgwlawkkQpCwwM10bv2H4N3b6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "shaxi@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123456789",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ravshanovsamir@gmail.com",
+									"description": "char",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"description": "string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "/contacts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "full_name",
+									"value": "Samariddin",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "18.09.2007",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/contacts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/contacts/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "full_name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "20.08.2008",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/contacts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contacts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/contacts/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "search",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/contacts/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contacts",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/contacts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/contacts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Phone",
+			"item": [
+				{
+					"name": "/phones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "contact_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[]",
+									"value": "456798",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[]",
+									"value": "789456",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[]",
+									"value": "123789",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[]",
+									"value": "456789",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[]",
+									"value": "321654",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/phones",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/phones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone_numbers[0][id]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[0][phone]",
+									"value": "+998111111111",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[1][id]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[1][phone]",
+									"value": "+998222222222",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[2][id]",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "phone_numbers[2][phone]",
+									"value": "+998333333333",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/phones",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/phones/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/phones/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phones",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "/emails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "contact_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "emails[]",
+									"value": "asd@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[]",
+									"value": "qwe@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[]",
+									"value": "rty@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[]",
+									"value": "vbn@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[]",
+									"value": "cvb@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/emails",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/emails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "emails[0][id]",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "emails[0][email]",
+									"value": "iop@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[1][id]",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "emails[1][email]",
+									"value": "jhg@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "emails[2][id]",
+									"value": "13",
+									"type": "text"
+								},
+								{
+									"key": "emails[2][email]",
+									"value": "yuty@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/emails",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/emails/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/emails/1456",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"emails",
+								"1456"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Serach",
+			"item": [
+				{
+					"name": "/search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/search?search=456",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "7|b4jQdOln4B0l7vOiNoqYUkOTkX4VcPLNgvxuZxLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
